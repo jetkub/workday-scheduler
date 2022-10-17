@@ -23,6 +23,9 @@ function loadTasks(){
   $(".hour").each(function(){
     let taskTime = $(this).text().trim();
     let taskData = localStorage.getItem(taskTime);
-    
+
+    $(this).siblings("textarea").val(taskData);
   });
 }
+
+loadTasks();
