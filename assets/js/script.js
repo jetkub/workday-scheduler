@@ -26,6 +26,23 @@ function loadTasks(){
 
     $(this).siblings("textarea").val(taskData);
   });
+};
+
+// need to style time-blocks with past, present 
+// or future classes (defined in style.css)
+
+// create function what will check if the current time matches, is greater
+// than, or is less than the value of the child item in each time-block
+// then add present, future, or past class to the time-block row element
+
+function trackTime (){
+  let currentHour = moment.format("hA");
+  console.log(currentHour);
+
 }
 
+
+
+
+trackTime();
 loadTasks();
