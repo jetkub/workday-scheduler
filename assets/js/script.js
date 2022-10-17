@@ -36,7 +36,7 @@ function loadTasks(){
 // then add present, future, or past class to the time-block row element
 
 function trackTime (){
-  let currentHour = moment.format("hA");
+  let currentHour = moment().format("hA");
   console.log(currentHour);
 
 }
