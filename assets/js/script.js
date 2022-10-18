@@ -36,12 +36,30 @@ function loadTasks(){
 // then add present, future, or past class to the time-block row element
 
 function trackTime (){
-  let currentHour = moment().format("hA");
-  console.log(currentHour);
+  let currentHour = moment().format("H");
+  console.log("currentHour: " + currentHour);
 
+  $(".time-block").each(function(){
+    //let schedulerTime = $("this").children("div").text().trim()
+    //let schedulerTime = $("this").children().eq(0).text().trim()
+    // remove any non-numeric text with regex (need only umber for time comparison)
+    //let schedulerHour = schedulerTime.replace(/[^0-9]/g, '');
+
+    // could not get the text of the child item to save in schedulerTime
+    // received tip from classmate Chris Lemmon to add id attribute
+    // to all my time-blocks, parse it as an Int, and compare to that
+    let schedulerHour = parseInt($(this).attr('id'));
+    console.log('schedulerHour: ' + schedulerHour)
+
+    if (schedulerHour == currentHour) {
+      $(this).addClass('present');
+    } else if (schedulerHour > currentHour) {
+      $(this).addClass('future');
+    } else {
+      $(this).addClass('past');
+    }
+  });
 }
-
-
 
 
 trackTime();
