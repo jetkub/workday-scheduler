@@ -8,7 +8,7 @@ Different stlying is applied to each block of time depending on the current time
 
 ## Usage
 
-[You can launch the application from here.]()
+[You can launch the application from here.](https://jakubcic.github.io/workday-scheduler/)
 <br>
 
 To use this web app you can input a task into the text area of each time block and hit the **SAVE** button to save your input to your browser's local storage.
