@@ -47,11 +47,11 @@ function trackTime (){
 
     // could not get the text of the child item to save in schedulerTime
     // received tip from classmate Chris Lemmon to add id attribute
-    // to all my time-blocks and compare to that
-    let schedulerHour = $(this).attr('id');
+    // to all my time-blocks, parse it as an Int, and compare to that
+    let schedulerHour = parseInt($(this).attr('id'));
     console.log('schedulerHour: ' + schedulerHour)
 
-    if (schedulerHour === currentHour) {
+    if (schedulerHour == currentHour) {
       $(this).addClass('present');
     } else if (schedulerHour > currentHour) {
       $(this).addClass('future');
